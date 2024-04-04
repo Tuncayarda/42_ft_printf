@@ -6,30 +6,30 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 01:42:21 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/03/30 23:07:19 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/04 20:18:21 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_handlepercent(va_list *args, char c, int *count)
+void	ft_handlepercent(va_list *args, const char **str, char flag, int *count)
 {
-	if (c == 'c')
-		*count += ft_putchar(va_arg(*args, int));
-	else if (c == 's')
-		*count += ft_putstr(va_arg(*args, char *));
-	else if (c == 'p')
-		*count += ft_putaddress(va_arg(*args, unsigned long), 1);
-	else if (c == 'd' || c == 'i')
-		*count += ft_putnbr(va_arg(*args, int));
-	else if (c == 'u')
-		*count += ft_putuint(va_arg(*args, unsigned int));
-	else if (c == 'x')
-		*count += ft_puthex(va_arg(*args, unsigned int), 0);
-	else if (c == 'X')
-		*count += ft_puthex(va_arg(*args, unsigned int), 1);
-	else if (c == '%')
-		*count += ft_putchar('%');
+	if (**str == 'c')
+		*count += ft_putchar(va_arg(*args, int), 1);
+	else if (**str == 's')
+		*count += ft_putstr(va_arg(*args, char *), 1);
+	else if (**str == 'p')
+		*count += ft_manageaddress(va_arg(*args, unsigned long), flag, str);
+	else if (**str == 'd' || **str == 'i')
+		*count += ft_managenbr(str, flag, va_arg(*args, int));
+	else if (**str == 'u')
+		*count += ft_putuint(va_arg(*args, unsigned int), 1);
+	else if (**str == 'x')
+		*count += ft_puthex(va_arg(*args, unsigned int), 0, 1);
+	else if (**str == 'X')
+		*count += ft_puthex(va_arg(*args, unsigned int), 1, 1);
+	else if (**str == '%')
+		*count += ft_putchar('%', 1);
 }
 
 int	ft_printf(const char *str, ...)
@@ -42,13 +42,14 @@ int	ft_printf(const char *str, ...)
 	while (*str)
 	{
 		if (*str != '%' && *str)
-			count += ft_putchar(*str);
+			count += ft_putchar(*str, 1);
 		else if (*str == '%')
 		{
 			str++;
-			while (*str == ' ')
+			while (*str == ' ' || (*str <= '9' && *str >= '0')
+				|| *str == '-' || *str == '.')
 				str++;
-			ft_handlepercent(&args, *str, &count);
+			ft_handlepercent(&args, &str, *str, &count);
 		}
 		str++;
 	}

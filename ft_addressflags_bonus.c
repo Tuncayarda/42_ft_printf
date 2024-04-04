@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putuint.c                                       :+:      :+:    :+:   */
+/*   ft_addressflags_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 04:28:51 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 16:58:31 by tuaydin          ###   ########.fr       */
+/*   Created: 2024/04/04 18:33:04 by tuaydin           #+#    #+#             */
+/*   Updated: 2024/04/04 19:56:50 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putuint(unsigned int num, int wr)
+int	ft_manageadrminflag(const char **sptr, unsigned long n)
 {
+	int	opval;
+	int	numval;
 	int	i;
 
 	i = 0;
-	if (num < 10)
-		i += ft_putchar(num + '0', wr);
+	opval = ft_uatoi(sptr);
+	numval = ft_putaddress(n, 1);
+	if (opval > numval)
+		while (opval - 2 > numval + i++)
+			ft_putchar(' ', 1);
+	if (opval < numval)
+		return (numval + 2);
 	else
-	{
-		i += ft_putuint(num / 10, wr);
-		i += ft_putchar(num % 10 + '0', wr);
-	}
-	return (i);
+		return (opval);
 }

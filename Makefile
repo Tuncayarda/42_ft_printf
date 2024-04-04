@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror 
 
-SRCS = 	ft_printf.c		\
+MSRCS = ft_printf.c		\
 		ft_putaddress.c \
 		ft_putchar.c 	\
 		ft_putnbr.c 	\
@@ -9,16 +9,25 @@ SRCS = 	ft_printf.c		\
 		ft_putuint.c 	\
 		ft_puthex.c		\
 
-OBJS = $(SRCS:.c=.o)
+BSRCS = ft_uatoi_bonus.c		\
+		ft_nbrflags_bonus.c		\
+		ft_addressflags_bonus.c	\
+
+MOBJS = $(MSRCS:.c=.o)
+BOBJS = $(BSRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): $(MOBJS) $(BOBJS)
+	ar rc $(NAME) $(MOBJS) $(BOBJS)
+	ranlib $(NAME)
+
+bonus: $(NAME) $(BOBJS)
+	ar rc $(NAME) $(BOBJS)
 	ranlib $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(MOBJS) $(BOBJS)
 
 fclean:	clean
 	$(RM) $(NAME)

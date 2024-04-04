@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 01:43:00 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 20:18:29 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/04 21:50:46 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_managenbrminflag(const char **sptr, int n);
 int	ft_managenbrzeroflag(const char **sptr, int n);
 int	ft_managenbrdotflag(const char **sptr, int n);
 
-int	ft_manageaddress(unsigned long n, char flag, const char **sptr);
+int	ft_manageaddress(unsigned long n, const char **sptr);
 int	ft_manageadrminflag(const char **sptr, unsigned long n);
 
 #endif

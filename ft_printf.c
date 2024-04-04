@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 01:42:21 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 20:18:21 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/04 22:25:16 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_handlepercent(va_list *args, const char **str, char flag, int *count)
 	else if (**str == 's')
 		*count += ft_putstr(va_arg(*args, char *), 1);
 	else if (**str == 'p')
-		*count += ft_manageaddress(va_arg(*args, unsigned long), flag, str);
+		*count += ft_manageaddress(va_arg(*args, unsigned long), str);
 	else if (**str == 'd' || **str == 'i')
 		*count += ft_managenbr(str, flag, va_arg(*args, int));
 	else if (**str == 'u')

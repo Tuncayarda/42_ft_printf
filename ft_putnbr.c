@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:15:25 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 20:23:48 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/04 22:28:53 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_managenbr(const char **sptr, char flag, int n)
 {
-	(void)flag; 
+	(void)flag;
 	while (*(*sptr - 1) != '%')
 		(*sptr)--;
 	if (**sptr == '-')

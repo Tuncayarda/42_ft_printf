@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 18:33:04 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 19:56:50 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/07 19:22:02 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_manageadrminflag(const char **sptr, unsigned long n)
 	int	i;
 
 	i = 0;
-	opval = ft_uatoi(sptr);
+	opval = ft_uatoi(sptr, 1);
 	numval = ft_putaddress(n, 1);
 	if (opval > numval)
 		while (opval - 2 > numval + i++)

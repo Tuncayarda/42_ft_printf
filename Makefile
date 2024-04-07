@@ -8,10 +8,12 @@ MSRCS = ft_printf.c		\
 		ft_putstr.c 	\
 		ft_putuint.c 	\
 		ft_puthex.c		\
+		ft_strrchr.c	\
 
 BSRCS = ft_uatoi_bonus.c		\
 		ft_nbrflags_bonus.c		\
 		ft_addressflags_bonus.c	\
+		ft_nbrflags_bonus2.c	\
 
 MOBJS = $(MSRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)

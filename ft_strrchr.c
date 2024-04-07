@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uatoi_bonus.c                                   :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 17:05:07 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 01:00:01 by tuaydin          ###   ########.fr       */
+/*   Created: 2024/04/08 01:12:01 by tuaydin           #+#    #+#             */
+/*   Updated: 2024/04/08 01:31:06 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_uatoi(const char **nptr, int skipf)
+int	ft_strlen(const char *s)
 {
-	int	result;
+	int	i;
 
-	result = 0;
-	while ((**nptr == '.' || **nptr == '0' || **nptr == '-' || **nptr == 32
-			|| (**nptr >= 9 && **nptr <= 13)) && skipf == 1)
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+int	ft_strrchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	if (c == '\0')
+		return (0);
+	while (s[i] != '%'&& s[i])
 	{
-		(*nptr)++;
+		if (s[i] == (char)c)
+			return (1);
+		i++;
 	}
-	while (**nptr >= '0' && **nptr <= '9')
-	{
-		result *= 10;
-		result += **nptr - '0';
-		(*nptr)++;
-	}
-	return (result);
+	return (0);
 }

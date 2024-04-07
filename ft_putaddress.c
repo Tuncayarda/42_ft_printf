@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 04:04:00 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 22:28:40 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/07 19:20:44 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_manageaddress(unsigned long n, const char **sptr)
 	while (*(*sptr - 1) != '%')
 		(*sptr)--;
 	if (**sptr <= '9' && **sptr >= '0')
-		noopval = ft_uatoi(sptr);
+		noopval = ft_uatoi(sptr, 1);
 	if (!n)
 	{
 		while (noopval-- > 5)

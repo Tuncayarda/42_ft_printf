@@ -6,13 +6,13 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 01:42:21 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 22:25:16 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/07 20:14:47 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_handlepercent(va_list *args, const char **str, char flag, int *count)
+void	ft_handlepercent(va_list *args, const char **str, int *count)
 {
 	if (**str == 'c')
 		*count += ft_putchar(va_arg(*args, int), 1);
@@ -21,7 +21,7 @@ void	ft_handlepercent(va_list *args, const char **str, char flag, int *count)
 	else if (**str == 'p')
 		*count += ft_manageaddress(va_arg(*args, unsigned long), str);
 	else if (**str == 'd' || **str == 'i')
-		*count += ft_managenbr(str, flag, va_arg(*args, int));
+		*count += ft_managenbr(str, va_arg(*args, int));
 	else if (**str == 'u')
 		*count += ft_putuint(va_arg(*args, unsigned int), 1);
 	else if (**str == 'x')
@@ -49,7 +49,7 @@ int	ft_printf(const char *str, ...)
 			while (*str == ' ' || (*str <= '9' && *str >= '0')
 				|| *str == '-' || *str == '.')
 				str++;
-			ft_handlepercent(&args, &str, *str, &count);
+			ft_handlepercent(&args, &str, &count);
 		}
 		str++;
 	}

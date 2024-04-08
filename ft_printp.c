@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putuint.c                                       :+:      :+:    :+:   */
+/*   ft_printp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 04:28:51 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 16:58:31 by tuaydin          ###   ########.fr       */
+/*   Created: 2024/04/08 18:59:52 by tuaydin           #+#    #+#             */
+/*   Updated: 2024/04/08 22:06:41 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putuint(unsigned int num, int wr)
+int	ft_printp(t_print p_data, unsigned long val)
 {
-	int	i;
-
-	i = 0;
-	if (num < 10)
-		i += ft_putchar(num + '0', wr);
-	else
-	{
-		i += ft_putuint(num / 10, wr);
-		i += ft_putchar(num % 10 + '0', wr);
-	}
-	return (i);
+	if (p_data.f_flg == 0 && p_data.s_flg == 0)
+		return (ft_putaddress(val, 1));
+	if (p_data.f_flg == 'w' && p_data.s_flg == 0)
+		return (ft_putadrwidth(p_data.f_flgs, val));
+	if (p_data.f_flg == '-' && p_data.s_flg == 0)
+		return (ft_putadrminus(p_data.f_flgs, val));
+	return (1);
 }

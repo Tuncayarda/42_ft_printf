@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 02:08:34 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/04 16:56:59 by tuaydin          ###   ########.fr       */
+/*   Created: 2024/04/08 15:02:18 by tuaydin           #+#    #+#             */
+/*   Updated: 2024/04/08 15:29:00 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c, int wr)
+int	ft_putchar(char c)
 {
-	if (wr == 1)
-		write(1, &c, 1);
+	write(1, &c, 1);
 	return (1);
 }

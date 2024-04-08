@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_hexlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 01:12:01 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 01:31:06 by tuaydin          ###   ########.fr       */
+/*   Created: 2024/04/08 23:57:27 by tuaydin           #+#    #+#             */
+/*   Updated: 2024/04/09 00:05:40 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(const char *s)
+int	ft_hexlen(unsigned int val)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-int	ft_strrchr(const char *s, int c)
-{
-	int	i;
-
-	i = 0;
-	if (c == '\0')
-		return (0);
-	while (s[i] != '%'&& s[i])
+    int length;
+	
+	length = 0;
+	if (val == 0)
+		return (1);
+    while (val != 0) 
 	{
-		if (s[i] == (char)c)
-			return (1);
-		i++;
-	}
-	return (0);
+        val /= 16;
+        length++;
+    }
+    return (length);
 }

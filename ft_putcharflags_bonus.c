@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addressflags_bonus.c                            :+:      :+:    :+:   */
+/*   ft_putcharflags_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 18:33:04 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/07 19:22:02 by tuaydin          ###   ########.fr       */
+/*   Created: 2024/04/08 16:32:57 by tuaydin           #+#    #+#             */
+/*   Updated: 2024/04/08 16:43:22 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_manageadrminflag(const char **sptr, unsigned long n)
+int	ft_putcharwidth(int width, char c)
 {
-	int	opval;
-	int	numval;
-	int	i;
+	int	count;
 
-	i = 0;
-	opval = ft_uatoi(sptr, 1);
-	numval = ft_putaddress(n, 1);
-	if (opval > numval)
-		while (opval - 2 > numval + i++)
-			ft_putchar(' ', 1);
-	if (opval < numval)
-		return (numval + 2);
-	else
-		return (opval);
+	count = 0;
+	while (width-- > 1)
+		count += ft_putchar(' ');
+	count += ft_putchar(c);
+	return (count);
+}
+
+int	ft_putcharminus(int size, char c)
+{
+	int	count;
+	
+	count = 0;
+	count += ft_putchar(c);
+	while (size-- > 1)
+		count += ft_putchar(' ');
+	return (count);
 }

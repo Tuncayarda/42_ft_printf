@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uatoi_bonus.c                                   :+:      :+:    :+:   */
+/*   ft_isvalidtype.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 17:05:07 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 01:00:01 by tuaydin          ###   ########.fr       */
+/*   Created: 2024/04/08 15:33:12 by tuaydin           #+#    #+#             */
+/*   Updated: 2024/04/08 16:19:04 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_uatoi(const char **nptr, int skipf)
+int	ft_isvalidtype(char c)
 {
-	int	result;
-
-	result = 0;
-	while ((**nptr == '.' || **nptr == '0' || **nptr == '-' || **nptr == 32
-			|| (**nptr >= 9 && **nptr <= 13)) && skipf == 1)
-	{
-		(*nptr)++;
-	}
-	while (**nptr >= '0' && **nptr <= '9')
-	{
-		result *= 10;
-		result += **nptr - '0';
-		(*nptr)++;
-	}
-	return (result);
+	if (c == 'c' || c == 's' || c == 'p'
+		|| c == 'd' || c == 'i' || c == 'u'
+		|| c == 'x' || c == 'X' || c == '%')
+		return ((int)c);
+	else 
+		return (0);
 }

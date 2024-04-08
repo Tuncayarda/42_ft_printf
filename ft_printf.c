@@ -5,31 +5,67 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 01:42:21 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/07 20:14:47 by tuaydin          ###   ########.fr       */
+/*   Created: 2024/04/08 14:50:58 by tuaydin           #+#    #+#             */
+/*   Updated: 2024/04/09 00:36:59 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_handlepercent(va_list *args, const char **str, int *count)
+#include <stdio.h>
+
+int	ft_print(va_list *args, t_print p_data)
 {
-	if (**str == 'c')
-		*count += ft_putchar(va_arg(*args, int), 1);
-	else if (**str == 's')
-		*count += ft_putstr(va_arg(*args, char *), 1);
-	else if (**str == 'p')
-		*count += ft_manageaddress(va_arg(*args, unsigned long), str);
-	else if (**str == 'd' || **str == 'i')
-		*count += ft_managenbr(str, va_arg(*args, int));
-	else if (**str == 'u')
-		*count += ft_putuint(va_arg(*args, unsigned int), 1);
-	else if (**str == 'x')
-		*count += ft_puthex(va_arg(*args, unsigned int), 0, 1);
-	else if (**str == 'X')
-		*count += ft_puthex(va_arg(*args, unsigned int), 1, 1);
-	else if (**str == '%')
-		*count += ft_putchar('%', 1);
+	if (p_data.v_type == 'c')
+		return (ft_printc(p_data, va_arg(*args, int)));
+	if (p_data.v_type == 's')
+		return (ft_prints(p_data, va_arg(*args, char *)));
+	if (p_data.v_type == 'p')
+		return (ft_printp(p_data, va_arg(*args, unsigned long)));
+	if (p_data.v_type == 'd' || p_data.v_type == 'i')
+		return (ft_printid(p_data, (long)va_arg(*args, int)));
+	if (p_data.v_type == 'u')
+		return (ft_printid(p_data, (long)va_arg(*args, unsigned int)));
+	if (p_data.v_type == 'x')
+		return (ft_printx(p_data, va_arg(*args, unsigned int), 0));
+	if (p_data.v_type == 'X')
+		return (ft_printx(p_data, va_arg(*args, unsigned int), 1));
+	if (p_data.v_type == '%')
+		return (ft_putchar('%'));
+	return (1);
+}
+
+int	ft_defineflag(va_list *args, const char **sptr)
+{
+	t_print print_data;
+	(*sptr)++;
+
+	if (**sptr >= '1' && **sptr <= '9')
+	{
+		print_data.f_flg = 'w';
+		print_data.f_flgs = ft_uatoi(sptr);
+		print_data.s_flg = ft_isflag(**sptr);
+		if (ft_isflag(**sptr))
+			ft_passflag(sptr);
+		print_data.s_flgs = ft_uatoi(sptr);
+		print_data.v_type = ft_isvalidtype(**sptr);
+	}
+	else
+	{
+		print_data.f_flg = ft_isflag(**sptr);
+		if (ft_isflag(**sptr))
+			ft_passflag(sptr);
+		print_data.f_flgs = ft_uatoi(sptr);
+		print_data.s_flg = ft_isflag(**sptr);
+		if (ft_isflag(**sptr))
+			ft_passflag(sptr);
+		print_data.s_flgs = ft_uatoi(sptr);
+		print_data.v_type = ft_isvalidtype(**sptr);
+	}
+	
+	//printf("%c %d %c %d %c", print_data.f_flg, print_data.f_flgs, print_data.s_flg,print_data.s_flgs,print_data.v_type);
+
+	return (ft_print(args, print_data));
 }
 
 int	ft_printf(const char *str, ...)
@@ -39,17 +75,13 @@ int	ft_printf(const char *str, ...)
 
 	va_start(args, str);
 	count = 0;
-	while (*str)
+	while(*str)
 	{
 		if (*str != '%' && *str)
-			count += ft_putchar(*str, 1);
+			count += ft_putchar(*str);
 		else if (*str == '%')
 		{
-			str++;
-			while (*str == ' ' || (*str <= '9' && *str >= '0')
-				|| *str == '-' || *str == '.')
-				str++;
-			ft_handlepercent(&args, &str, &count);
+			count += ft_defineflag(&args, &str);
 		}
 		str++;
 	}

@@ -6,13 +6,11 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:50:58 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/09 00:36:59 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:00:09 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-#include <stdio.h>
 
 int	ft_print(va_list *args, t_print p_data)
 {
@@ -62,8 +60,6 @@ int	ft_defineflag(va_list *args, const char **sptr)
 		print_data.s_flgs = ft_uatoi(sptr);
 		print_data.v_type = ft_isvalidtype(**sptr);
 	}
-	
-	//printf("%c %d %c %d %c", print_data.f_flg, print_data.f_flgs, print_data.s_flg,print_data.s_flgs,print_data.v_type);
 
 	return (ft_print(args, print_data));
 }

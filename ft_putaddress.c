@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:02:29 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 19:12:59 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:12:26 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_putaddress(unsigned long addressValue, int put_head)
 {
 	int		count;
 	char	*base;
+
 	count = 0;
 	base = "0123456789abcdef";
 	if (!addressValue)

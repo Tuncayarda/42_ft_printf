@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 00:18:31 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/09 00:35:31 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:12:18 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_puthexzerodot(int z_size, int d_size, unsigned int val, int upper)
 {
 	int	count;
 	int	numlen;
-	
+
 	count = 0;
 	if (d_size > ft_hexlen(val))
 		numlen = d_size;
@@ -45,7 +45,7 @@ int	ft_puthexwidthdot(int z_size, int d_size, unsigned int val, int upper)
 {
 	int	count;
 	int	numlen;
-	
+
 	count = 0;
 	if (d_size > ft_hexlen(val))
 		numlen = d_size;

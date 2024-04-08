@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:54:18 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 22:06:16 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:09:02 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_prints(t_print p_data, char *str)
 {
 	if (p_data.f_flg == 0 && p_data.s_flg == 0)
 		return (ft_putstr(str));
-	if ( p_data.f_flg == 'w' && p_data.s_flg == 0)
+	if (p_data.f_flg == 'w' && p_data.s_flg == 0)
 		return (ft_putstrwidth(p_data.f_flgs, str));
 	if (p_data.f_flg == '.' && p_data.s_flg == 0)
 		return (ft_putstrdot(p_data.f_flgs, str));

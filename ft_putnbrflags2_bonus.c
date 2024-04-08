@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 22:32:39 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 23:38:24 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:09:43 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putnbrzerodot(int z_size, int d_size, long val)
 	int	count;
 	int	numlen;
 	int	ismin;
-	
+
 	count = 0;
 	ismin = 0;
 	if (val < 0)
@@ -43,7 +43,7 @@ int	ft_putnbrspace(long val)
 	return (ft_putnbr(val));
 }
 
-int ft_putnbrplus(long val)
+int	ft_putnbrplus(long val)
 {
 	if (val >= 0)
 		return (ft_putchar('+') + ft_putnbr(val));

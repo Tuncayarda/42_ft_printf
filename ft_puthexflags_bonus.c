@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 23:55:04 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/09 00:17:45 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:08:45 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_puthexzero(int width, unsigned int val, int upper)
 {
 	int	count;
 
-	count = 0;	
+	count = 0;
 	if (width == 0 && val == 0)
 		return (0);
 	while (width-- > ft_hexlen(val))

@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:50:58 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/09 01:00:09 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:06:12 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	ft_print(va_list *args, t_print p_data)
 
 int	ft_defineflag(va_list *args, const char **sptr)
 {
-	t_print print_data;
-	(*sptr)++;
+	t_print	print_data;
 
+	(*sptr)++;
 	if (**sptr >= '1' && **sptr <= '9')
 	{
 		print_data.f_flg = 'w';
@@ -47,20 +47,17 @@ int	ft_defineflag(va_list *args, const char **sptr)
 			ft_passflag(sptr);
 		print_data.s_flgs = ft_uatoi(sptr);
 		print_data.v_type = ft_isvalidtype(**sptr);
+		return (ft_print(args, print_data));
 	}
-	else
-	{
-		print_data.f_flg = ft_isflag(**sptr);
-		if (ft_isflag(**sptr))
-			ft_passflag(sptr);
-		print_data.f_flgs = ft_uatoi(sptr);
-		print_data.s_flg = ft_isflag(**sptr);
-		if (ft_isflag(**sptr))
-			ft_passflag(sptr);
-		print_data.s_flgs = ft_uatoi(sptr);
-		print_data.v_type = ft_isvalidtype(**sptr);
-	}
-
+	print_data.f_flg = ft_isflag(**sptr);
+	if (ft_isflag(**sptr))
+		ft_passflag(sptr);
+	print_data.f_flgs = ft_uatoi(sptr);
+	print_data.s_flg = ft_isflag(**sptr);
+	if (ft_isflag(**sptr))
+		ft_passflag(sptr);
+	print_data.s_flgs = ft_uatoi(sptr);
+	print_data.v_type = ft_isvalidtype(**sptr);
 	return (ft_print(args, print_data));
 }
 
@@ -71,7 +68,7 @@ int	ft_printf(const char *str, ...)
 
 	va_start(args, str);
 	count = 0;
-	while(*str)
+	while (*str)
 	{
 		if (*str != '%' && *str)
 			count += ft_putchar(*str);

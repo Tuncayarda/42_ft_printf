@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:15:04 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 19:39:57 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:07:49 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_putadrwidth(int width, unsigned long val)
 int	ft_putadrminus(int size, unsigned long val)
 {
 	int	count;
-	int adr_length;
+	int	adr_length;
 
 	count = 0;
 	count += ft_putaddress(val, 1);

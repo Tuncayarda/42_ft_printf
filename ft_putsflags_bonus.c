@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:58:27 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 18:53:28 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:11:19 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_putstrwidth(int width, char *str)
 int	ft_putstrdot(int size, char *str)
 {
 	int		count;
-	
+
 	count = 0;
 	if (!str)
 	{
@@ -43,7 +43,6 @@ int	ft_putstrdot(int size, char *str)
 	else
 		while (size-- > 0 && *str)
 			count += ft_putchar(*str++);
-	
 	return (count);
 }
 

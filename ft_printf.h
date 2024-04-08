@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:51:06 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/09 00:33:41 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:11:46 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ int		ft_putnbrminusdot(int size, int width, long val);
 int		ft_putnbrzero(int size, long val);
 int		ft_putnbrzerodot(int z_size, int d_size, long val);
 int		ft_putnbrspace(long val);
-int 	ft_putnbrplus(long val);
-
+int		ft_putnbrplus(long val);
 int		ft_printx(t_print p_data, unsigned int val, int upper);
 int		ft_puthex(unsigned int val, int upper);
 int		ft_puthexwidth(int width, unsigned int val, int upper);
@@ -75,4 +74,5 @@ int		ft_puthexzero(int width, unsigned int val, int upper);
 int		ft_puthexzerodot(int z_size, int d_size, unsigned int val, int upper);
 int		ft_puthexhash(unsigned int val, int upper);
 int		ft_puthexwidthdot(int z_size, int d_size, unsigned int val, int upper);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 20:01:20 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 22:29:20 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:08:31 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	ft_putnbrzero(int width, long val)
 	int	ismin;
 
 	count = 0;
-	ismin = 0;	
+	ismin = 0;
 	if (width == 0 && val == 0)
 		return (0);
 	if (val < 0)

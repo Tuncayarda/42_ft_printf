@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:33:12 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/08 16:19:04 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/09 01:12:07 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int	ft_isvalidtype(char c)
 		|| c == 'd' || c == 'i' || c == 'u'
 		|| c == 'x' || c == 'X' || c == '%')
 		return ((int)c);
-	else 
+	else
 		return (0);
 }

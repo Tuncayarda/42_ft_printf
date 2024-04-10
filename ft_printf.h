@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:51:06 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/04/09 01:11:46 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/04/11 01:33:36 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_print
 	char	s_flg;
 	int		f_flgs;
 	int		s_flgs;
-	int		width;
 }	t_print;
 
 int		ft_printf(const char *str, ...);

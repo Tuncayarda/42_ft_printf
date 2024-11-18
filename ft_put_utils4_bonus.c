@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 19:47:50 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/11/18 15:02:02 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 15:02:33 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_putstr_width_dot(t_fdata p_data, char *str)
 	return (count);
 }
 
-int	ft_putnstr(char *s, int val)
+int	ft_putnstr_pf(char *s, int val)
 {
 	int	rtn;
 

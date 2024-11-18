@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:49:50 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/11/18 14:22:20 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 15:01:07 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	ft_define_flags(va_list *args, char **sptr)
 		print_data.s_flag = ft_isflag_pf(**sptr);
 		ft_passflag_pf(sptr);
 		print_data.sf_val = ft_uatoi_pf(sptr);
-		print_data.v_type = ft_isvalidtype(**sptr);
+		print_data.v_type = ft_isvalidtype_pf(**sptr);
 		return (ft_do_print(args, print_data));
 	}
 	print_data.f_flag = ft_isflag_pf(**sptr);
@@ -57,7 +57,7 @@ static int	ft_define_flags(va_list *args, char **sptr)
 	print_data.s_flag = ft_isflag_pf(**sptr);
 	ft_passflag_pf(sptr);
 	print_data.sf_val = ft_uatoi_pf(sptr);
-	print_data.v_type = ft_isvalidtype(**sptr);
+	print_data.v_type = ft_isvalidtype_pf(**sptr);
 	return (ft_do_print(args, print_data));
 }
 

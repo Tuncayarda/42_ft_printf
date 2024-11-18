@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 21:14:48 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/11/18 14:23:57 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 15:00:29 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_putnstr_pf(char *s, int val);
 int		ft_putnull_pf(int val);
 char	ft_isflag_pf(char c);
 void	ft_passflag_pf(char **sptr);
-char	ft_isvalidtype(char c);
+char	ft_isvalidtype_pf(char c);
 int		ft_putchar_minus(t_fdata p_data, char c);
 int		ft_putstr_minus(t_fdata p_data, char *str);
 int		ft_putptr_minus(t_fdata p_data, unsigned long val);

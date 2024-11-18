@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 21:14:48 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/10/19 13:10:00 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:23:57 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_flag_data
 }				t_fdata;
 
 int		ft_printf(const char *str, ...);
-int		ft_uatoi(char **sptr);
-int		ft_uatoi1(char *sptr);
+int		ft_uatoi_pf(char **sptr);
+int		ft_uatoi1_pf(char *sptr);
 int		ft_print_c_type(t_fdata print_data, char c);
 int		ft_print_s_type(t_fdata p_data, char *str);
 int		ft_print_p_type(t_fdata p_data, unsigned long val);
@@ -35,19 +35,19 @@ int		ft_print_di_type(t_fdata p_data, long val);
 int		ft_print_u_type(t_fdata p_data, unsigned long val);
 int		ft_print_x_type(t_fdata p_data, unsigned long val, int is_upper);
 int		ft_print_percent_type(t_fdata p_data);
-int		ft_strlen(char *s);
-int		ft_digitlen(long val);
-int		ft_hexlen(unsigned long val);
-int		ft_ptrlen(unsigned long val);
-int		ft_putchar(char c);
-int		ft_putstr(char *s);
-int		ft_putptr(unsigned long val);
-int		ft_putdigit(long val);
-int		ft_puthex(unsigned long val, int is_upper);
-int		ft_putnstr(char *s, int val);
-int		ft_putnull(int val);
-char	ft_isflag(char c);
-void	ft_passflag(char **sptr);
+int		ft_strlen_pf(char *s);
+int		ft_digitlen_pf(long val);
+int		ft_hexlen_pf(unsigned long val);
+int		ft_ptrlen_pf(unsigned long val);
+int		ft_putchar_pf(char c);
+int		ft_putstr_pf(char *s);
+int		ft_putptr_pf(unsigned long val);
+int		ft_putdigit_pf(long val);
+int		ft_puthex_pf(unsigned long val, int is_upper);
+int		ft_putnstr_pf(char *s, int val);
+int		ft_putnull_pf(int val);
+char	ft_isflag_pf(char c);
+void	ft_passflag_pf(char **sptr);
 char	ft_isvalidtype(char c);
 int		ft_putchar_minus(t_fdata p_data, char c);
 int		ft_putstr_minus(t_fdata p_data, char *str);

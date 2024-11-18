@@ -6,13 +6,13 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 21:42:42 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/10/18 21:36:59 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:23:05 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned long val, int is_upper)
+int	ft_puthex_pf(unsigned long val, int is_upper)
 {
 	int		i;
 	char	*base;
@@ -23,7 +23,7 @@ int	ft_puthex(unsigned long val, int is_upper)
 	else
 		base = "0123456789ABCDEF";
 	if (val >= 16)
-		i += ft_puthex(val / 16, is_upper);
-	i += ft_putchar(base[val % 16]);
+		i += ft_puthex_pf(val / 16, is_upper);
+	i += ft_putchar_pf(base[val % 16]);
 	return (i);
 }

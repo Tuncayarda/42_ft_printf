@@ -6,13 +6,13 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 21:40:01 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/10/18 21:48:28 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:18:37 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putchar_pf(char c)
 {
 	write(1, &c, 1);
 	return (1);

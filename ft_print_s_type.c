@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 15:43:08 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/10/18 21:45:34 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:20:37 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_print_s_type(t_fdata p_data, char *str)
 {
 	if (p_data.f_flag == 0 && p_data.s_flag == 0)
-		return (ft_putstr(str));
+		return (ft_putstr_pf(str));
 	if ((p_data.f_flag == '-' || p_data.f_flag == ' ')
 		&& p_data.s_flag == 0)
 		return (ft_putstr_minus(p_data, str));
@@ -29,5 +29,5 @@ int	ft_print_s_type(t_fdata p_data, char *str)
 		return (ft_putstr_minus_dot(p_data, str));
 	if (p_data.f_flag == '.' && p_data.s_flag == '0')
 		return (ft_putstr_dot(p_data, str));
-	return (ft_putstr(str));
+	return (ft_putstr_pf(str));
 }

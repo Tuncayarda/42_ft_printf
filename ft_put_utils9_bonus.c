@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 20:44:35 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/10/18 21:28:43 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:30:22 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ int	ft_putdigit_zero_plus_utils0(t_fdata p_data, long val)
 	is_minus = (val < 0);
 	if (is_minus)
 		val = -val;
-	while (p_data.ff_val-- > ft_digitlen(val) + 1)
-		count += ft_putchar(' ');
-	if ((!val && ff - fs > ft_digitlen(val))
+	while (p_data.ff_val-- > ft_digitlen_pf(val) + 1)
+		count += ft_putchar_pf(' ');
+	if ((!val && ff - fs > ft_digitlen_pf(val))
 		&& !(ff > 0 && fs > 0))
-		count += ft_putchar(' ');
+		count += ft_putchar_pf(' ');
 	if (is_minus)
-		count += ft_putchar('-');
+		count += ft_putchar_pf('-');
 	else
-		count += ft_putchar('+');
+		count += ft_putchar_pf('+');
 	if (val || (ff > fs && fs != 0))
-		count += ft_putdigit(val);
+		count += ft_putdigit_pf(val);
 	return (count);
 }
 
@@ -53,18 +53,18 @@ int	ft_putdigit_zero_plus_utils1(t_fdata p_data, long val)
 	if (is_minus)
 		val = -val;
 	while (p_data.ff_val-- > fs + 1)
-		count += ft_putchar(' ');
-	if ((!val && ff - fs > ft_digitlen(val))
+		count += ft_putchar_pf(' ');
+	if ((!val && ff - fs > ft_digitlen_pf(val))
 		&& !(ff > 0 && fs > 0))
-		count += ft_putchar(' ');
+		count += ft_putchar_pf(' ');
 	if (is_minus)
-		count += ft_putchar('-');
+		count += ft_putchar_pf('-');
 	else
-		count += ft_putchar(' ');
-	while (p_data.sf_val-- > ft_digitlen(val))
-		count += ft_putchar('0');
+		count += ft_putchar_pf(' ');
+	while (p_data.sf_val-- > ft_digitlen_pf(val))
+		count += ft_putchar_pf('0');
 	if (val || (ff > fs && fs != 0))
-		count += ft_putdigit(val);
+		count += ft_putdigit_pf(val);
 	return (count);
 }
 
@@ -83,14 +83,14 @@ int	ft_putdigit_zero_plus_utils2(t_fdata p_data, long val)
 		val = -val;
 	if (is_minus)
 		val = -val;
-	while (p_data.ff_val-- > ft_digitlen(val) + 1)
-		count += ft_putchar(' ');
+	while (p_data.ff_val-- > ft_digitlen_pf(val) + 1)
+		count += ft_putchar_pf(' ');
 	if (is_minus)
-		count += ft_putchar('-');
+		count += ft_putchar_pf('-');
 	else
-		count += ft_putchar('+');
+		count += ft_putchar_pf('+');
 	if (val)
-		count += ft_putdigit(val);
+		count += ft_putdigit_pf(val);
 	return (count);
 }
 
@@ -108,14 +108,14 @@ int	ft_putdigit_zero_plus_utils3(t_fdata p_data, long val)
 	if (is_minus)
 		val = -val;
 	while (p_data.ff_val-- > p_data.sf_val)
-		count += ft_putchar(' ');
+		count += ft_putchar_pf(' ');
 	if (is_minus)
-		count += ft_putchar('-');
+		count += ft_putchar_pf('-');
 	else
-		count += ft_putchar('+');
-	while (p_data.sf_val-- > ft_digitlen(val) + 1)
-		count += ft_putchar('0');
-	count += ft_putdigit(val);
+		count += ft_putchar_pf('+');
+	while (p_data.sf_val-- > ft_digitlen_pf(val) + 1)
+		count += ft_putchar_pf('0');
+	count += ft_putdigit_pf(val);
 	return (count);
 }
 
@@ -132,12 +132,12 @@ int	ft_putdigit_zero_plus_utils4(t_fdata p_data, long val)
 	is_minus = (val < 0);
 	if (is_minus)
 		val = -val;
-	while (p_data.ff_val-- > ft_digitlen(val))
-		count += ft_putchar(' ');
+	while (p_data.ff_val-- > ft_digitlen_pf(val))
+		count += ft_putchar_pf(' ');
 	if (is_minus)
-		count += ft_putchar('-');
+		count += ft_putchar_pf('-');
 	else
-		count += ft_putchar('+');
-	count += ft_putdigit(val);
+		count += ft_putchar_pf('+');
+	count += ft_putdigit_pf(val);
 	return (count);
 }

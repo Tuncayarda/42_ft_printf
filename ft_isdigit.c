@@ -6,11 +6,11 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 21:43:57 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/10/18 21:45:11 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:18:16 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+int	ft_isdigit_pf(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

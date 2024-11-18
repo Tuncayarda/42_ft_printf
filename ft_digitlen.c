@@ -6,11 +6,11 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 21:44:14 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/10/18 21:45:03 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:18:07 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_digitlen(long val)
+int	ft_digitlen_pf(long val)
 {
 	int	count;
 

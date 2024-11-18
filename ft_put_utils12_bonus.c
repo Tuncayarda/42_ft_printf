@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 21:30:14 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/11/18 14:32:05 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/11/18 23:05:34 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,8 @@ int	ft_putdigit_plus_dot_util2(t_fdata p_data, long val)
 {
 	int	count;
 	int	is_minus;
-	int	ff;
-	int	fs;
 
 	count = 0;
-	ff = p_data.ff_val;
-	fs = p_data.sf_val;
 	is_minus = (val < 0);
 	if (is_minus)
 		val = -val;
@@ -96,12 +92,8 @@ int	ft_putdigit_plus_dot_util3(t_fdata p_data, long val)
 {
 	int	count;
 	int	is_minus;
-	int	ff;
-	int	fs;
 
 	count = 0;
-	ff = p_data.ff_val;
-	fs = p_data.sf_val;
 	is_minus = (val < 0);
 	if (is_minus)
 		val = -val;
@@ -121,12 +113,8 @@ int	ft_putdigit_plus_dot_util4(t_fdata p_data, long val)
 {
 	int	count;
 	int	is_minus;
-	int	ff;
-	int	fs;
 
 	count = 0;
-	ff = p_data.ff_val;
-	fs = p_data.sf_val;
 	is_minus = (val < 0);
 	if (is_minus)
 		val = -val;
